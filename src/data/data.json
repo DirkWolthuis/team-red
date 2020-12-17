@@ -1,84 +1,84 @@
 {
-  events: [
+  "events": [
     {
-      id: '7cec1d3e-fc4b-4d9c-adab-a75187d70116',
-      title: 'Microservices and testing',
-      presentor: 'Abbi Mcdonnell',
-      location: 'CoZone and Canteen',
-      date: '16/9/2019',
-      tags: ['API', 'Microservices', 'Serverless', 'Testing']
+      "id": "7cec1d3e-fc4b-4d9c-adab-a75187d70116",
+      "title": "Microservices and testing",
+      "presentor": "Abbi Mcdonnell",
+      "location": "CoZone and Canteen",
+      "date": "16/9/2019",
+      "tags": ["API", "Microservices", "Serverless", "Testing"]
     },
     {
-      id: '98ee4bed-ae15-485b-b054-79832e2a7056',
-      title: 'Data & Analytics Management Event',
-      presentor: 'Kristian Mahoney',
-      location: 'CoZone and Canteen',
-      date: "21/9/2020",
-      tags: ['Data science', 'Big data', 'Analytics', 'Hosting']
+      "id": "98ee4bed-ae15-485b-b054-79832e2a7056",
+      "title": "Data & Analytics Management Event",
+      "presentor": "Kristian Mahoney",
+      "location": "CoZone and Canteen",
+      "date": "21/9/2020",
+      "tags": ["Data science", "Big data", "Analytics", "Hosting"]
     },
     {
-      id: 'b66a1d01-3b49-4002-b755-676b47ecd3b9',
-      title: 'SAP on Azure Envision Workshops',
-      presentor: 'Celine Stubbs',
-      location: 'CoZone and Canteen',
-      date: '28/9/2019',
-      tags: ['SAP', 'Azure', 'Hosting']
+      "id": "b66a1d01-3b49-4002-b755-676b47ecd3b9",
+      "title": "SAP on Azure Envision Workshops",
+      "presentor": "Celine Stubbs",
+      "location": "CoZone and Canteen",
+      "date": "28/9/2019",
+      "tags": ["SAP", "Azure", "Hosting"]
     },
     {
-      id: '97ed5319-3894-407e-ad7c-43f42c00b709',
-      title: 'Agile gaming evening',
-      presentor: 'Ami Shea',
-      location: 'CoZone LR'
-      date: '12/10/2020'
-      tags: ['Gaming', 'Agile', 'Social']
+      "id": "97ed5319-3894-407e-ad7c-43f42c00b709",
+      "title": "Agile gaming evening",
+      "presentor": "Ami Shea",
+      "location": "CoZone LR"
+      "date": "12/10/2020"
+      "tags": ["Gaming", "Agile", "Social"]
     },
     {
-      id: '8903f7f1-a0f0-4df0-8ae3-1e917a442935',
-      title: 'Combi IoT/Arduino klusavond',
-      presentor: 'Linda Gunn',
-      location: 'CoZone LR',
-      date: '2/11/2020',
-      tags: ['IoT', 'Arduino']
+      "id": "8903f7f1-a0f0-4df0-8ae3-1e917a442935",
+      "title": "Combi IoT/Arduino klusavond",
+      "presentor": "Linda Gunn",
+      "location": "CoZone LR",
+      "date": "2/11/2020",
+      "tags": ["IoT", "Arduino"]
     },
     {
-      id: '4ffffb46-0481-42bc-8e4c-c2d63b126781',
-      title: 'IoT Microprocessor',
-      presentor: 'Linda Gunn',
-      location: 'CoZone LR',
-      date: '16/11/2020',
-      tags: ['IoT', 'Arduino']
+      "id": "4ffffb46-0481-42bc-8e4c-c2d63b126781",
+      "title": "IoT Microprocessor",
+      "presentor": "Linda Gunn",
+      "location": "CoZone LR",
+      "date": "16/11/2020",
+      "tags": ["IoT", "Arduino"]
     },
     {
-      id: '74bc7993-6078-4aae-89e8-03809eca3519',
-      title: 'AdvantageYou event:  DevOps',
-      presentor: 'Leandro Kumar',
-      location: 'CoZone LR',
-      date: '30/11/2020',
-      tags: ['DevOps', 'AdvantageYou']
+      "id": "74bc7993-6078-4aae-89e8-03809eca3519",
+      "title": "AdvantageYou event:  DevOps",
+      "presentor": "Leandro Kumar",
+      "location": "CoZone LR",
+      "date": "30/11/2020",
+      "tags": ["DevOps", "AdvantageYou"]
     },
     {
-      id: '2c3697ec-7461-4215-b9aa-dab87d770887',
-      title: 'AdvantageYou: Internet of Things',
-      presentor: 'Ethel Holmes',
-      location: 'CoZone LR',
-      date: '10/12/2020',
-      tags: ['IoT', 'AdvantageYou']
+      "id": "2c3697ec-7461-4215-b9aa-dab87d770887",
+      "title": "AdvantageYou: Internet of Things",
+      "presentor": "Ethel Holmes",
+      "location": "CoZone LR",
+      "date": "10/12/2020",
+      "tags": ["IoT", "AdvantageYou"]
     },
     {
-      id: '95795e2f-d40d-4236-a0ec-d08cd12080b5',
-      title: 'AdvantageYou event: Ethics & AI',
-      presentor: 'Ethel Holmes',
-      location: 'CoZone LR',
-      date: '3/12/2020',
-      tags: ['Machine learning', 'AdvantageYou']
+      "id": "95795e2f-d40d-4236-a0ec-d08cd12080b5",
+      "title": "AdvantageYou event: Ethics & AI",
+      "presentor": "Ethel Holmes",
+      "location": "CoZone LR",
+      "date": "3/12/2020",
+      "tags": ["Machine learning", "AdvantageYou"]
     },
     {
-      id: '0dd57b0b-8869-4dc2-bd5e-789e25d6f351',
-      title: 'AdvantageYou event: Intelligent Automation',
-      presentor: 'Linda Gunn',
-      location: 'CoZone LR',
-      date: '16/12/2020',
-      tags: ['IoT', 'Machine learning', 'AdvantageYou']
+      "id": "0dd57b0b-8869-4dc2-bd5e-789e25d6f351",
+      "title": "AdvantageYou event: Intelligent Automation",
+      "presentor": "Linda Gunn",
+      "location": "CoZone LR",
+      "date": "16/12/2020",
+      "tags": ["IoT", "Machine learning", "AdvantageYou"]
     },
     {	
           "id": "60691b8b-0d02-4691-95bc-9b09f64e139c",
