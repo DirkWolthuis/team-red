@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
+import Likes from "./Likes/Likes";
 import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
 
