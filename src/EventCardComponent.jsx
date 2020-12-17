@@ -59,6 +59,10 @@ const Container = styled.div`
         color: #064e3b;
         border: 1px solid #10b981;
       }
+
+      .sel {
+        border-color: red;
+      }
     }
   }
 `;
@@ -80,7 +84,7 @@ const EventCardComponent = (props) => {
         <div className="eventcard__border"></div>
         <div className="eventcard__tags">
           {event.tags.map((item, index) => (
-            <div className="tag" key={item}>
+            <div className={"tag" + (props.likes.includes(item) ? " sel" : "") } key={item}>
               {item}
             </div>
           ))}

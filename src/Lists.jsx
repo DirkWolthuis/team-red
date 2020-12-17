@@ -42,7 +42,7 @@ const Lists = (props) => {
             <h3 className="event-container__title">
               {index + 1}
             </h3>
-            <EventCardComponent key={event.id} event={event} />
+            <EventCardComponent key={event.id} event={event} likes={props.likes} />
           </div>
         ))}
       </div>
