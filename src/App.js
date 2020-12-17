@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
+import { getTags } from "./utils/DataHandler";
 
 const GlobalStyle = createGlobalStyle`
 
