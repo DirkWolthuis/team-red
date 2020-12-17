@@ -18,22 +18,11 @@ const Container = styled.div`
     margin: 5px;
   }
 
-  h1 {
-    font-family: "Damion", cursive;
-    color: #fff;
-    text-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
-  }
-
-  h2 {
-    color: #fff;
-  }
-
   .swipe {
     position: absolute;
   }
 
   .cardContainer {
-    width: 90vw;
     max-width: 260px;
     height: 300px;
   }
@@ -44,10 +33,13 @@ const Container = styled.div`
     width: 80vw;
     max-width: 260px;
     height: 300px;
-    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cardContent {
@@ -122,7 +114,6 @@ const Container = styled.div`
     }
   }
 `;
-
 
 const db = [
   {
