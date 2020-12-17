@@ -3,7 +3,7 @@
       "id": "xxx",
       "title": "My title",
       "date": "1-1-200",
-      "presenter": "Mo",
+      "presentor": "Mo",
       "tags": [
         "webpack",
         "react"
@@ -13,11 +13,93 @@
       "id": "xxx2",
       "title": "My title",
       "date": "1-2-2020",
-      "presenter": "Mo",
+      "presentor": "Mo",
       "tags": [
         "internet",
         "other",
         "react"
       ]
-    }
+    },
+    [
+      {	
+          "id": "60691b8b-0d02-4691-95bc-9b09f64e139c",
+          "title":"(Capgemini CSD Java) Radio Kafka: Discussion on Chapter 11-12", 
+          "presentor": "jade.eloff@capgemini.com",
+          "date":"Thursday, January 7th, 2021", 
+          "url": "",
+          "tags": ["Java"]
+      },
+      {	
+          "id": "29e1d2cf-094b-4ab8-93cf-78f338e5aaef",
+          "title":"How to handle your patterns? IoT/Arduino klusavond (discussion included)", 
+          "presentor": "By Bart van Beek & Hans van Rijs",
+          "date":"Wednesday, January 13th, 2021: 18:30h – 21:00h", 
+          "url": "",
+          "tags": ["IoT", "Arduino"]
+      },
+      {	
+          "id": "e97403b7-4a25-401e-a442-3a8e1466bfe6",
+          "title":"(Capgemini CSD Java) Radio Kafka: Discussion on Chapter 12-15", 
+          "presentor": "jade.eloff@capgemini.com",
+          "date":"Thursday, January 14th, 2021", 
+          "url": "",
+          "tags": ["Java"]
+      },
+      {	
+          "id": "2e397849-0d49-43bc-9768-2e4b96cfbf6b",
+          "title":"Practical 3D Graphics & Programming", 
+          "presentor": "Quincy Jacobs, Remko Haagsma",
+          "date":"Wednesday, January 20th, 2021", 
+          "url": "",
+          "tags": ["3D", "Graphics", "Animation"]
+      },
+      {	
+          "id": "ed52be4b-0d30-4f92-9dd4-58d82fb92dff",
+          "title":".NET 5 + Blazor + Xamarin + Visual Studio 2019 productivity tips", 
+          "presentor": "Sina Wahed & Karel Metselaar",
+          "date":"Wednesday, February 3rd", 
+          "url": "",
+          "tags": [".NET", "xamarin", "Blazor", "productivity"]
+      },
+      {	
+          "id": "ff2940d8-4a0f-4690-a5b6-048f3ee1b8df",
+          "title":"IoT: Exploring IoT Microprocessors", 
+          "presentor": " Martin Brommer",
+          "date":"Wednesday, February 10th", 
+          "url": "",
+          "tags": ["IoT", "Microproceccor"]
+      },
+      {	
+          "id": "80fd77a6-3a40-45d8-b3ba-ad75b0a6ac6f",
+          "title":"How to deal with agile startarchitecture", 
+          "presentor": "Ben Kooistra & Hans van Rijs",
+          "date":"Wednesday, February 3rd", 
+          "url": "",
+          "tags": ["architecture", "agile"]
+      },
+      {	
+          "id": "b7217d9e-b274-4346-b462-f7978b232e82",
+          "title":"Building OAUTH2 security with SpringBoot", 
+          "presentor": "Bart van Beek",
+          "date":"Wednesday, February 17th, 2021", 
+          "url": "",
+          "tags": ["Security", "OAuth", "Java", "Spring", "Spring Boot"]
+      },
+      {	
+          "id": "c5713ad4-aab8-4494-8526-89bc7e145649",
+          "title":"Practical 3D Graphics & Programming", 
+          "presentor": "Quincy Jacobs, Remko Haagsma",
+          "date":"Wednesday, February 24th, 2021", 
+          "url": "",
+          "tags": ["3D", "Graphics", "Animation"]
+      },
+      {	
+          "id": "4b3e06e8-965d-43f1-933a-ffcaa749c2a5",
+          "title":"IoT/Arduino klusavond", 
+          "presentor": "Aishwarya Dhall",
+          "date":"Wednesday, March 10th, 2021", 
+          "url": "",
+          "tags": ["IoT", "Arduino"]
+      }
+  ]
 ]
