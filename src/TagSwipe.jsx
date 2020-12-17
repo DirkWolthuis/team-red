@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { getTags } from "./utils/DataHandler";
 
 const Container = styled.div`
+  width: 50%;
+
   .swipe {
     position: absolute;
   }
@@ -117,10 +119,8 @@ const db = getTags();
 const alreadyRemoved = [];
 let tagsState = db; // This fixes issues with updating tags state forcing it to use the current state and not the state that was active when the card was created.
 
-const TagSwipe = () => {
+const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
   const [tags, setTags] = useState(db);
-  const [likes, setLikes] = useState([]);
-  const [dislikes, setDislikes] = useState([]);
 
   const [lastDirection, setLastDirection] = useState();
   const childRefs = useMemo(

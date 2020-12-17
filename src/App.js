@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
+import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
-import { getTags } from "./utils/DataHandler";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -41,7 +41,6 @@ body{
 
 #root>div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -54,11 +53,25 @@ body{
 }`;
 
 function App() {
+  const [likes, setLikes] = useState([]);
+  const [dislikes, setDislikes] = useState([]);
+
   return (
     <>
       <GlobalStyle />
       <div className="app">
-        <TagSwipe />
+        <TagSwipe
+          likes={likes}
+          dislikes={dislikes}
+          setLikes={setLikes}
+          setDislikes={setDislikes}
+        />
+        <Lists
+          likes={likes}
+          dislikes={dislikes}
+          setLikes={setLikes}
+          setDislikes={setDislikes}
+        />
       </div>
     </>
   );
