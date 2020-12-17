@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React from "react";
 import styled from "styled-components";
 var data = require("./data/data.json");
 
@@ -67,15 +67,12 @@ const randomNumber = () => {
   return Math.floor(Math.random() * 20);
 };
 
-const getRandomImage = () => {
-  const possibleImages = [
-    `https://randomuser.me/api/portraits/men/${randomNumber()}.jpg`,
-    `https://randomuser.me/api/portraits/women/${randomNumber()}.jpg`,
-  ];
-  return possibleImages[Math.round(Math.random())];
-};
+const getRandomImage = (gender) => {
+  return `https://randomuser.me/api/portraits/${gender}/${randomNumber()}.jpg`;
+}
 
-const EventCardComponent = ({ event }) => {
+const EventCardComponent = React.memo( props => {
+  const { event } = props;
   return (
     <Container>
       <div className="eventcard">
@@ -87,6 +84,7 @@ const EventCardComponent = ({ event }) => {
         <div className="eventcard__presentor">
           <img src={getRandomImage()} alt="" />
           <p>{event.presentor}</p>
+          <img src={getRandomImage(event.gender)} alt=""/>
         </div>
         <div className="eventcard__border"></div>
         <div className="eventcard__tags">
@@ -99,6 +97,6 @@ const EventCardComponent = ({ event }) => {
       </div>
     </Container>
   );
-};
+});
 
 export default EventCardComponent;
