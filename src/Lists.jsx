@@ -5,11 +5,10 @@ import { getEventsForTags } from "./utils/DataHandler";
 
 const StyledLists = styled.div`
   .list-container {
-    width: 50%;
+    min-width: 380px;
     height: 90vh;
     overflow-y: scroll;
     justify-content: flex-start;
-    width: 100%;
 
     &::-webkit-scrollbar {
       display: none;
@@ -37,7 +36,7 @@ const Lists = (props) => {
     <StyledLists>
       <h1>Your next event:</h1>
       <div className="list-container">
-        {displayedEvents.slice(0, 4).map((event, index) => (
+        {props.likes.length > 0 && displayedEvents.slice(0, 4).map((event, index) => (
           <div key={event.id} className="event-container">
             <h3 className="event-container__title">
               {index + 1}
