@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import styled from "styled-components";
-
 import { getTags } from "./utils/DataHandler";
+const jdenticon = require("jdenticon");
 
 const Container = styled.div`
   width: 50%;
@@ -27,6 +27,7 @@ const Container = styled.div`
     background-size: cover;
     background-position: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -163,7 +164,7 @@ const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
   return (
     <Container>
       <div>
-        <h1>React Tinder Card</h1>
+        <h1>Do you like?</h1>
         <div className="cardContainer">
           {tags.map((tag, index) => (
             <TinderCard
@@ -174,6 +175,12 @@ const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
               onCardLeftScreen={() => outOfFrame(tag)}
             >
               <div className="card">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: jdenticon.toSvg(tag, 200),
+                  }}
+                ></div>
+
                 <h3>{tag}</h3>
               </div>
             </TinderCard>
