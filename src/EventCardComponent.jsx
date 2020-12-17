@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-var data = require('./data/data.json');
+var data = require("./data/data.json");
 
 const Container = styled.div`
   .eventcard {
@@ -12,14 +12,18 @@ const Container = styled.div`
     border-radius: 20px;
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding: 20px;
     margin-bottom: 16px;
 
-    h3, p {
+    &__border {
+      width: 100%;
+      height: 1px;
+      background-color: #a7f3d0;
+      margin: 12px 0px;
+    }
+
+    h3,
+    p {
       margin: 0px;
     }
 
@@ -30,30 +34,36 @@ const Container = styled.div`
 
     &__presentor {
       display: flex;
-      align-items: center;
       margin-bottom: 16px;
 
       img {
+        border-radius: 100px;
         height: 50px;
-        margin-left: 16px;
+        margin-right: 16px;
       }
     }
 
     &__tags {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+
       color: black;
       font-size: 12px;
-      
-      p {
-        margin: 2px;
+
+      .tag {
+        background-color: #a7f3d0;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 0px 4px;
+        border-radius: 4px;
+        color: #064e3b;
+        border: 1px solid #10b981;
       }
     }
   }
- `;
+`;
 
- const randomNumber = () => {
+const randomNumber = () => {
   return Math.floor(Math.random() * 20);
 };
 
@@ -70,13 +80,18 @@ const EventCardComponent = React.memo( props => {
         <div className="eventcard__date">
           <p>{event.date}</p>
         </div>
+        <div className="eventcard__border"></div>
         <div className="eventcard__presentor">
+          <img src={getRandomImage()} alt="" />
           <p>{event.presentor}</p>
           <img src={getRandomImage(event.gender)} alt=""/>
         </div>
+        <div className="eventcard__border"></div>
         <div className="eventcard__tags">
           {event.tags.map((item, index) => (
-            <p key={item}>{item}</p>
+            <div className="tag" key={item}>
+              {item}
+            </div>
           ))}
         </div>
       </div>
