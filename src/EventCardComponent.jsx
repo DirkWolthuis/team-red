@@ -17,6 +17,7 @@ const Container = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    margin-bottom: 16px;
 
     h3, p {
       margin: 0px;
