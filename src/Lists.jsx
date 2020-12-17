@@ -6,7 +6,7 @@ import { getEventsForTags } from "./utils/DataHandler";
 const StyledLists = styled.div`
   .list-container {
     width: 50%;
-    height: 80vh;
+    height: 90vh;
     overflow-y: scroll;
     justify-content: flex-start;
     width: 100%;
@@ -40,7 +40,7 @@ const Lists = (props) => {
         {displayedEvents.slice(0, 4).map((event, index) => (
           <div key={event.id} className="event-container">
             <h3 className="event-container__title">
-              {index + 1} ({event.hits})
+              {index + 1}
             </h3>
             <EventCardComponent key={event.id} event={event} />
           </div>
