@@ -1,0 +1,23 @@
+[
+    { 
+      "id": "xxx",
+      "title": "My title",
+      "date": "1-1-200",
+      "presenter": "Mo",
+      "tags": [
+        "webpack",
+        "react"
+      ]
+    },
+    { 
+      "id": "xxx2",
+      "title": "My title",
+      "date": "1-2-2020",
+      "presenter": "Mo",
+      "tags": [
+        "internet",
+        "other",
+        "react"
+      ]
+    }
+]

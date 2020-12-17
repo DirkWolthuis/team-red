@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import  { getTags } from "./utils/DataHandler";
 
 function App() {
+  const tags = getTags();
+  console.log(tags);
+
   return (
     <div className="App">
       <header className="App-header">
