@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import TagSwipe from "./TagSwipe";
-import { getTags } from "./utils/DataHandler";
+import { getTags, getEventsForTags } from "./utils/DataHandler";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -55,8 +55,9 @@ body{
 
 function App() {
   const tags = getTags();
+  const events = getEventsForTags(["Advantageyou", "api", "Microservices"]);
   console.log(tags);
-
+  console.log(events);
   return (
     <>
       <GlobalStyle />
