@@ -133,7 +133,7 @@ let charactersState = db; // This fixes issues with updating characters state fo
 const TagSwipe = () => {
   const [characters, setCharacters] = useState(db);
   const [likes, setLikes] = useState([]);
-  const [disLikes, setDislikes] = useState([]);
+  const [dislikes, setDislikes] = useState([]);
 
   const [lastDirection, setLastDirection] = useState();
   const childRefs = useMemo(
