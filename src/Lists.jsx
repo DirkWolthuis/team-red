@@ -38,7 +38,7 @@ const Lists = (props) => {
       <h1>Your next event:</h1>
       <div className="list-container">
         {displayedEvents.slice(0, 4).map((event, index) => (
-          <div className="event-container">
+          <div key={event.id} className="event-container">
             <h3 className="event-container__title">
               {index + 1} ({event.hits})
             </h3>
