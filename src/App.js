@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
+import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
 import { getTags, getEventsForTags } from "./utils/DataHandler";
 
@@ -41,7 +42,6 @@ body{
 
 #root>div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -54,15 +54,32 @@ body{
 }`;
 
 function App() {
+<<<<<<< HEAD
   const tags = getTags();
   const events = getEventsForTags(["Advantageyou", "api", "Microservices"]);
   console.log(tags);
   console.log(events);
+=======
+  const [likes, setLikes] = useState([]);
+  const [dislikes, setDislikes] = useState([]);
+
+>>>>>>> 99fcb2c45395211ddcc56333b6232f887919400c
   return (
     <>
       <GlobalStyle />
       <div className="app">
-        <TagSwipe />
+        <TagSwipe
+          likes={likes}
+          dislikes={dislikes}
+          setLikes={setLikes}
+          setDislikes={setDislikes}
+        />
+        <Lists
+          likes={likes}
+          dislikes={dislikes}
+          setLikes={setLikes}
+          setDislikes={setDislikes}
+        />
       </div>
     </>
   );
