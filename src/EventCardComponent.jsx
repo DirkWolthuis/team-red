@@ -8,7 +8,6 @@ const Container = styled.div`
     background-color: #fff;
     width: 80vw;
     max-width: 260px;
-    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     background-size: cover;
     background-position: center;
@@ -35,6 +34,7 @@ const Container = styled.div`
     &__presentor {
       display: flex;
       margin-bottom: 16px;
+      justify-content: space-between;
 
       img {
         border-radius: 100px;

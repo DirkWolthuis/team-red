@@ -3,7 +3,19 @@ import styled from "styled-components";
 import EventCardComponent from "./EventCardComponent";
 
 const StyledLists = styled.div`
-  width: 50%;
+
+.list-container {
+    width: 50%;
+    height: 80vh;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
 
   .event-container {
     display: flex;
@@ -202,12 +214,14 @@ const displayedEvents = [
 
 const Lists = (props) => {
   return <StyledLists>
-    {displayedEvents.slice(0,4).map((event, index) => (
-      <div className="event-container" key={event.id}>
-        <h3 className="event-container__title">{index + 1}</h3>
-        <EventCardComponent event={event}/>
-      </div>
-    ))}
+    <div className="list-container">
+      {displayedEvents.slice(0,4).map((event, index) => (
+        <div className="event-container" key={event.id}>
+          <h3 className="event-container__title">{index + 1}</h3>
+          <EventCardComponent event={event}/>
+        </div>
+      ))}
+    </div>
   </StyledLists>;
 };
 
