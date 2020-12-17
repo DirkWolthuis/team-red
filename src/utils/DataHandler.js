@@ -29,7 +29,7 @@ function getEventsForTags(tags) {
     };
   });
 
-  return dataWithCount;
+  return dataWithCount.sort((a,b) => b.hits - a.hits);
 }
 
 export { getEventsForTags, getTags };
