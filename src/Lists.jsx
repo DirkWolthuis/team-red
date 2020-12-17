@@ -4,6 +4,17 @@ import EventCardComponent from "./EventCardComponent";
 
 const StyledLists = styled.div`
   width: 50%;
+
+  .event-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      color: white;
+      margin-right: 16px;
+    }
+  }
 `;
 
 const displayedEvents = [
@@ -172,7 +183,10 @@ const displayedEvents = [
 const Lists = (props) => {
   return <StyledLists>
     {displayedEvents.slice(0,4).map((event, index) => (
-      <EventCardComponent key={event.id} event={event}/>
+      <div className="event-container">
+        <h3>{index + 1}</h3>
+        <EventCardComponent key={event.id} event={event}/>
+      </div>
     ))}
   </StyledLists>;
 };
