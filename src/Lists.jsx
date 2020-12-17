@@ -4,7 +4,19 @@ import EventCardComponent from "./EventCardComponent";
 import { getEventsForTags } from "./utils/DataHandler";
 
 const StyledLists = styled.div`
-  width: 50%;
+
+.list-container {
+    width: 50%;
+    height: 80vh;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
 
   .event-container {
     display: flex;
@@ -23,12 +35,14 @@ const Lists = (props) => {
   const displayedEvents = getEventsForTags(props.likes);
   console.log(displayedEvents);
   return <StyledLists>
-    {displayedEvents.slice(0,4).map((event, index) => (
-      <div className="event-container">
-        <h3 className="event-container__title">{index + 1} ({event.hits})</h3>
-        <EventCardComponent key={event.id} event={event}/>
-      </div>
-    ))}
+  	<div className="list-container">
+      {displayedEvents.slice(0,4).map((event, index) => (
+        <div className="event-container">
+          <h3 className="event-container__title">{index + 1} ({event.hits})</h3>
+          <EventCardComponent key={event.id} event={event}/>
+        </div>
+      ))}
+    </div>
   </StyledLists>;
 };
 
