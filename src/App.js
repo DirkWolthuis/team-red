@@ -54,14 +54,16 @@ body{
 }`;
 
 function App() {
-
-  const tags = getTags();
-  const events = getEventsForTags(["Advantageyou", "api", "Microservices"]);
-  console.log(tags);
-  console.log(events);
-
   const [likes, setLikes] = useState([]);
   const [dislikes, setDislikes] = useState([]);
+
+  const onAddLike = (like) => {
+    setLikes((likes) => [...likes, like]);
+  };
+
+  const onAddDislike = (dislike) => {
+    setDislikes((dislikes) => [...dislikes, dislike]);
+  };
 
   return (
     <>
@@ -70,15 +72,10 @@ function App() {
         <TagSwipe
           likes={likes}
           dislikes={dislikes}
-          setLikes={setLikes}
-          setDislikes={setDislikes}
+          onAddLike={onAddLike}
+          onAddDislike={onAddDislike}
         />
-        <Lists
-          likes={likes}
-          dislikes={dislikes}
-          setLikes={setLikes}
-          setDislikes={setDislikes}
-        />
+        <Lists likes={likes} dislikes={dislikes} />
       </div>
     </>
   );

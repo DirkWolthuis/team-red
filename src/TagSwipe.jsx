@@ -120,7 +120,7 @@ const db = getTags();
 const alreadyRemoved = [];
 let tagsState = db; // This fixes issues with updating tags state forcing it to use the current state and not the state that was active when the card was created.
 
-const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
+const TagSwipe = ({ likes, dislikes, onAddLike, onAddDislike }) => {
   const [tags, setTags] = useState(db);
 
   const [lastDirection, setLastDirection] = useState();
@@ -134,10 +134,10 @@ const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
 
   const swiped = (direction, nameToDelete) => {
     if (direction === "right") {
-      setLikes([...likes, nameToDelete]);
+      onAddLike(nameToDelete);
     }
     if (direction === "left") {
-      setDislikes([...dislikes, nameToDelete]);
+      onAddDislike(nameToDelete);
     }
 
     setLastDirection(direction);
