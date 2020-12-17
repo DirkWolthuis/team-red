@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
+import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
+<<<<<<< HEAD
 import EventCardComponent from "./EventCardComponent";
 import { getTags } from "./utils/DataHandler";
+=======
+>>>>>>> f344d8e8740c3f80badd04210552da0e44c54b09
 
 const GlobalStyle = createGlobalStyle`
 
@@ -42,7 +46,6 @@ body{
 
 #root>div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -218,15 +221,26 @@ const displayedEvents = [
 ];
 
 function App() {
-  const tags = getTags();
-  console.log(tags);
+  const [likes, setLikes] = useState([]);
+  const [dislikes, setDislikes] = useState([]);
 
   return (
     <>
       <GlobalStyle />
       <div className="app">
-        <TagSwipe />
+        <TagSwipe
+          likes={likes}
+          dislikes={dislikes}
+          setLikes={setLikes}
+          setDislikes={setDislikes}
+        />
         <EventCardComponent event={displayedEvents[0]}/>
+        <Lists
+          likes={likes}
+          dislikes={dislikes}
+          setLikes={setLikes}
+          setDislikes={setDislikes}
+        />
       </div>
     </>
   );
