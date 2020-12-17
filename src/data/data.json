@@ -6,7 +6,7 @@
       "presentor": "Abbi Mcdonnell",
       "location": "CoZone and Canteen",
       "date": "16/9/2019",
-      "tags": ["API", "Microservices", "Serverless", "Testing"]
+      "tags": ["API", "Microservices", "Serverless", "Testing", "Architecture"]
     },
     {
       "id": "98ee4bed-ae15-485b-b054-79832e2a7056",
@@ -22,7 +22,7 @@
       "presentor": "Celine Stubbs",
       "location": "CoZone and Canteen",
       "date": "28/9/2019",
-      "tags": ["SAP", "Azure", "Hosting"]
+      "tags": ["SAP", "Azure", "Hosting", "Architecture"]
     },
     {
       "id": "97ed5319-3894-407e-ad7c-43f42c00b709",
@@ -134,7 +134,7 @@
       "presentor": "Ben Kooistra & Hans van Rijs",
       "date":"Wednesday, February 3rd", 
       "url": "",
-      "tags": ["architecture", "agile"]
+      "tags": ["Architecture", "Agile"]
     },
     {	
       "id": "b7217d9e-b274-4346-b462-f7978b232e82",
