@@ -168,7 +168,7 @@ const TagSwipe = ({ likes, dislikes, onAddLike, onAddDislike }) => {
     <Container>
       <div>
         <h1>Do you like?</h1>
-        <img src="autorenew-24px.svg" className="reset-icon" alt=""/>
+        {/* <img src="autorenew-24px.svg" color="white" className="reset-icon" alt=""/> */}
         <div className="cardContainer">
           {tags.map((tag, index) => (
             <TinderCard

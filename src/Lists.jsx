@@ -6,7 +6,7 @@ import { getEventsForTags } from "./utils/DataHandler";
 const StyledLists = styled.div`
   .list-container {
     width: 50%;
-    height: 80vh;
+    height: 90vh;
     overflow-y: scroll;
     justify-content: flex-start;
     width: 100%;
