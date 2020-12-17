@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
-import { getTags } from "./utils/DataHandler";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -37,7 +36,7 @@ body{
   display: flex;
   justify-content: center;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 #root>div {
@@ -51,29 +50,37 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}`;
+}
+
+h1{
+  color: white;
+}
+`;
 
 function App() {
-
   const [likes, setLikes] = useState([]);
   const [dislikes, setDislikes] = useState([]);
+
+  const onAddLike = (like) => {
+    setLikes((likes) => [...likes, like]);
+  };
+
+  const onAddDislike = (dislike) => {
+    setDislikes((dislikes) => [...dislikes, dislike]);
+  };
 
   return (
     <>
       <GlobalStyle />
+      <h1>Wednesday Evening Training Matching AI 0.9 (WETMAI09)</h1>
       <div className="app">
         <TagSwipe
           likes={likes}
           dislikes={dislikes}
-          setLikes={setLikes}
-          setDislikes={setDislikes}
+          onAddLike={onAddLike}
+          onAddDislike={onAddDislike}
         />
-        <Lists
-          likes={likes}
-          dislikes={dislikes}
-          setLikes={setLikes}
-          setDislikes={setDislikes}
-        />
+        <Lists likes={likes} dislikes={dislikes} />
       </div>
     </>
   );
