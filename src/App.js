@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createGlobalStyle } from "styled-components";
 import Lists from "./Lists";
 import TagSwipe from "./TagSwipe";
-import { getTags, getEventsForTags } from "./utils/DataHandler";
+import { getTags } from "./utils/DataHandler";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -56,9 +56,8 @@ body{
 function App() {
 
   const tags = getTags();
-  const events = getEventsForTags(["Advantageyou", "api", "Microservices"]);
+  
   console.log(tags);
-  console.log(events);
 
   const [likes, setLikes] = useState([]);
   const [dislikes, setDislikes] = useState([]);
