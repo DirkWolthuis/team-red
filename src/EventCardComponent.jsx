@@ -34,7 +34,7 @@ const Container = styled.div`
     &__presentor {
       display: flex;
       margin-bottom: 16px;
-      justify-content: space-between;
+      justify-content: flex-start;
 
       img {
         border-radius: 100px;
@@ -63,15 +63,7 @@ const Container = styled.div`
   }
 `;
 
-const randomNumber = () => {
-  return Math.floor(Math.random() * 20);
-};
-
-const getRandomImage = (gender) => {
-  return `https://randomuser.me/api/portraits/${gender}/${randomNumber()}.jpg`;
-};
-
-const EventCardComponent = React.memo((props) => {
+const EventCardComponent = (props) => {
   const { event } = props;
   return (
     <Container>
@@ -82,7 +74,7 @@ const EventCardComponent = React.memo((props) => {
         </div>
         <div className="eventcard__border"></div>
         <div className="eventcard__presentor">
-          <img src={getRandomImage(event.gender)} alt="" />
+          <img src={event.image} alt="" />
           <p>{event.presentor}</p>
         </div>
         <div className="eventcard__border"></div>
@@ -96,6 +88,6 @@ const EventCardComponent = React.memo((props) => {
       </div>
     </Container>
   );
-});
+};
 
 export default EventCardComponent;

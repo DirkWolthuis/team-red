@@ -11,6 +11,11 @@ const Container = styled.div`
     position: absolute;
   }
 
+  .reset-icon {
+    height: 24px;
+    width: 24px;
+  }
+
   .cardContainer {
     height: 300px;
     display: flex;
@@ -163,6 +168,7 @@ const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
     <Container>
       <div>
         <h1>Do you like?</h1>
+        {/* <img src="autorenew-24px.svg" className="reset-icon" alt=""/> */}
         <div className="cardContainer">
           {tags.map((tag, index) => (
             <TinderCard

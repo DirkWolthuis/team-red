@@ -37,9 +37,9 @@ const Lists = (props) => {
   return <StyledLists>
   	<div className="list-container">
       {displayedEvents.slice(0,4).map((event, index) => (
-        <div className="event-container">
-          <h3 className="event-container__title">{index + 1} ({event.hits})</h3>
-          <EventCardComponent key={event.id} event={event}/>
+        <div className="event-container" key={event.id}>
+          <h3 className="event-container__title">{index + 1}</h3>
+          <EventCardComponent event={event}/>
         </div>
       ))}
     </div>
