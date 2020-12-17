@@ -2,29 +2,17 @@ import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import styled from "styled-components";
 
+import { getTags } from "./utils/DataHandler";
+
 const Container = styled.div`
-  .app > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .row {
-    flex-direction: row !important;
-  }
-
-  .row > * {
-    margin: 5px;
-  }
-
   .swipe {
     position: absolute;
   }
 
   .cardContainer {
-    max-width: 260px;
     height: 300px;
+    display: flex;
+    justify-content: center;
   }
 
   .card {
@@ -33,13 +21,20 @@ const Container = styled.div`
     width: 80vw;
     max-width: 260px;
     height: 300px;
-    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .swipe:nth-last-child(2) > .card {
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  .swipe:last-child > .card {
+    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.1);
   }
 
   .cardContent {
@@ -84,6 +79,14 @@ const Container = styled.div`
     transform: scale(1.05);
   }
 
+  h1 {
+    color: white;
+  }
+
+  h2 {
+    width: 260px;
+  }
+
   @keyframes popup {
     0% {
       transform: scale(1, 1);
@@ -109,29 +112,13 @@ const Container = styled.div`
   }
 `;
 
-const db = [
-  {
-    name: "Raspberry Pi",
-  },
-  {
-    name: "Docker",
-  },
-  {
-    name: "Svelte",
-  },
-  {
-    name: "Gitlab",
-  },
-  {
-    name: "Kubernetes",
-  },
-];
+const db = getTags();
 
 const alreadyRemoved = [];
-let charactersState = db; // This fixes issues with updating characters state forcing it to use the current state and not the state that was active when the card was created.
+let tagsState = db; // This fixes issues with updating tags state forcing it to use the current state and not the state that was active when the card was created.
 
 const TagSwipe = () => {
-  const [characters, setCharacters] = useState(db);
+  const [tags, setTags] = useState(db);
   const [likes, setLikes] = useState([]);
   const [dislikes, setDislikes] = useState([]);
 
@@ -156,21 +143,18 @@ const TagSwipe = () => {
     alreadyRemoved.push(nameToDelete);
   };
 
-  const outOfFrame = (name) => {
-    console.log(name + " left the screen!");
-    charactersState = charactersState.filter(
-      (character) => character.name !== name
-    );
-    setCharacters(charactersState);
+  const outOfFrame = (tag) => {
+    tagsState = tagsState.filter((tagMap) => tagMap !== tag);
+    setTags(tagsState);
   };
 
   const swipe = (dir) => {
-    const cardsLeft = characters.filter(
+    const cardsLeft = tags.filter(
       (person) => !alreadyRemoved.includes(person.name)
     );
     if (cardsLeft.length) {
       const toBeRemoved = cardsLeft[cardsLeft.length - 1].name; // Find the card object to be removed
-      const index = db.map((person) => person.name).indexOf(toBeRemoved); // Find the index of which to make the reference to
+      const index = db.indexOf(toBeRemoved); // Find the index of which to make the reference to
       alreadyRemoved.push(toBeRemoved); // Make sure the next card gets removed next time if this card do not have time to exit the screen
       childRefs[index].current.swipe(dir); // Swipe the card!
     }
@@ -181,16 +165,16 @@ const TagSwipe = () => {
       <div>
         <h1>React Tinder Card</h1>
         <div className="cardContainer">
-          {characters.map((character, index) => (
+          {tags.map((tag, index) => (
             <TinderCard
               ref={childRefs[index]}
               className="swipe"
-              key={character.name}
-              onSwipe={(dir) => swiped(dir, character.name)}
-              onCardLeftScreen={() => outOfFrame(character.name)}
+              key={tag}
+              onSwipe={(dir) => swiped(dir, tag)}
+              onCardLeftScreen={() => outOfFrame(tag)}
             >
               <div className="card">
-                <h3>{character.name}</h3>
+                <h3>{tag}</h3>
               </div>
             </TinderCard>
           ))}
@@ -198,8 +182,8 @@ const TagSwipe = () => {
         {lastDirection ? (
           <h2 className="infoText">
             {lastDirection === "right"
-              ? `you liked ${likes[likes.length - 1]}`
-              : `you liked ${dislikes[dislikes.length - 1]}`}
+              ? `you liked '${likes[likes.length - 1]}'`
+              : `you disliked '${dislikes[dislikes.length - 1]}'`}
           </h2>
         ) : (
           <h2 className="infoText" />

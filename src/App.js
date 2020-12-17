@@ -54,9 +54,6 @@ body{
 }`;
 
 function App() {
-  const tags = getTags();
-  console.log(tags);
-
   return (
     <>
       <GlobalStyle />
