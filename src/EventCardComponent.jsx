@@ -69,9 +69,9 @@ const randomNumber = () => {
 
 const getRandomImage = (gender) => {
   return `https://randomuser.me/api/portraits/${gender}/${randomNumber()}.jpg`;
-}
+};
 
-const EventCardComponent = React.memo( props => {
+const EventCardComponent = React.memo((props) => {
   const { event } = props;
   return (
     <Container>
@@ -82,9 +82,8 @@ const EventCardComponent = React.memo( props => {
         </div>
         <div className="eventcard__border"></div>
         <div className="eventcard__presentor">
-          <img src={getRandomImage()} alt="" />
+          <img src={getRandomImage(event.gender)} alt="" />
           <p>{event.presentor}</p>
-          <img src={getRandomImage(event.gender)} alt=""/>
         </div>
         <div className="eventcard__border"></div>
         <div className="eventcard__tags">
