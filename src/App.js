@@ -54,16 +54,15 @@ body{
 }`;
 
 function App() {
-<<<<<<< HEAD
+
   const tags = getTags();
   const events = getEventsForTags(["Advantageyou", "api", "Microservices"]);
   console.log(tags);
   console.log(events);
-=======
+
   const [likes, setLikes] = useState([]);
   const [dislikes, setDislikes] = useState([]);
 
->>>>>>> 99fcb2c45395211ddcc56333b6232f887919400c
   return (
     <>
       <GlobalStyle />
