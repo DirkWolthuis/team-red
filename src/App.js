@@ -55,10 +55,6 @@ body{
 
 function App() {
 
-  const tags = getTags();
-  
-  console.log(tags);
-
   const [likes, setLikes] = useState([]);
   const [dislikes, setDislikes] = useState([]);
 

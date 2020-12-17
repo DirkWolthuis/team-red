@@ -19,7 +19,9 @@ const StyledLists = styled.div`
 `;
 
 const Lists = (props) => {
-  const displayedEvents = getEventsForTags(["Advantageyou", "api", "Microservices", "Analytics"]);
+  console.log(props);
+  const displayedEvents = getEventsForTags(props.likes);
+  console.log(displayedEvents);
   return <StyledLists>
     {displayedEvents.slice(0,4).map((event, index) => (
       <div className="event-container">
