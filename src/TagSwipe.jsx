@@ -149,7 +149,7 @@ const TagSwipe = () => {
       setLikes([...likes, nameToDelete]);
     }
     if (direction === "left") {
-      setDislikes([...disLikes, nameToDelete]);
+      setDislikes([...dislikes, nameToDelete]);
     }
 
     setLastDirection(direction);
