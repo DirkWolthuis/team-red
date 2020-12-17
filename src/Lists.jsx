@@ -10,7 +10,7 @@ const StyledLists = styled.div`
     justify-content: center;
     align-items: center;
 
-    h3 {
+    &__title {
       color: white;
       margin-right: 16px;
     }
@@ -184,7 +184,7 @@ const Lists = (props) => {
   return <StyledLists>
     {displayedEvents.slice(0,4).map((event, index) => (
       <div className="event-container">
-        <h3>{index + 1}</h3>
+        <h3 className="event-container__title">{index + 1}</h3>
         <EventCardComponent key={event.id} event={event}/>
       </div>
     ))}
