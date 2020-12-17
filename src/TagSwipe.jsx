@@ -50,12 +50,6 @@ const Container = styled.div`
   .swipe:last-of-type {
   }
 
-  .card h3 {
-    position: absolute;
-    bottom: 0;
-    margin: 10px;
-  }
-
   .infoText {
     width: 100%;
     height: 28px;
@@ -138,6 +132,8 @@ let charactersState = db; // This fixes issues with updating characters state fo
 
 const TagSwipe = () => {
   const [characters, setCharacters] = useState(db);
+  const [likes, setLikes] = useState([]);
+  const [dislikes, setDislikes] = useState([]);
 
   const [lastDirection, setLastDirection] = useState();
   const childRefs = useMemo(
@@ -149,7 +145,13 @@ const TagSwipe = () => {
   );
 
   const swiped = (direction, nameToDelete) => {
-    console.log("removing: " + nameToDelete);
+    if (direction === "right") {
+      setLikes([...likes, nameToDelete]);
+    }
+    if (direction === "left") {
+      setDislikes([...dislikes, nameToDelete]);
+    }
+
     setLastDirection(direction);
     alreadyRemoved.push(nameToDelete);
   };
@@ -187,17 +189,18 @@ const TagSwipe = () => {
               onSwipe={(dir) => swiped(dir, character.name)}
               onCardLeftScreen={() => outOfFrame(character.name)}
             >
-              <div
-                style={{ backgroundImage: "url(" + character.url + ")" }}
-                className="card"
-              >
+              <div className="card">
                 <h3>{character.name}</h3>
               </div>
             </TinderCard>
           ))}
         </div>
         {lastDirection ? (
-          <h2 className="infoText">You swiped {lastDirection}</h2>
+          <h2 className="infoText">
+            {lastDirection === "right"
+              ? `you liked ${likes[likes.length - 1]}`
+              : `you liked ${dislikes[dislikes.length - 1]}`}
+          </h2>
         ) : (
           <h2 className="infoText" />
         )}
