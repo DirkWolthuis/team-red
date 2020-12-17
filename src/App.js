@@ -1,5 +1,7 @@
+import React from "react";
 import { createGlobalStyle } from "styled-components";
 import TagSwipe from "./TagSwipe";
+import { getTags } from "./utils/DataHandler";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -49,12 +51,12 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-
-`;
+}`;
 
 function App() {
+  const tags = getTags();
+  console.log(tags);
+
   return (
     <>
       <GlobalStyle />
