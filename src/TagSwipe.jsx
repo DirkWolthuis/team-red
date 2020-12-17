@@ -150,9 +150,7 @@ const TagSwipe = ({ likes, dislikes, setLikes, setDislikes }) => {
   };
 
   const swipe = (dir) => {
-    const cardsLeft = tags.filter(
-      (person) => !alreadyRemoved.includes(person.name)
-    );
+    const cardsLeft = tags.filter((tag) => !alreadyRemoved.includes(tag));
     if (cardsLeft.length) {
       const toBeRemoved = cardsLeft[cardsLeft.length - 1]; // Find the card object to be removed
       const index = db.indexOf(toBeRemoved); // Find the index of which to make the reference to
