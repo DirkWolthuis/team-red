@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import TinderCard from "react-tinder-card";
 import styled from "styled-components";
+import Likes from "./Likes/Likes";
 import { getTags } from "./utils/DataHandler";
 const jdenticon = require("jdenticon");
 
@@ -165,46 +166,48 @@ const TagSwipe = ({ likes, dislikes, onAddLike, onAddDislike }) => {
   };
 
   return (
-    <Container>
-      <div>
-        <h1>Do you like?</h1>
-        {/* <img src="autorenew-24px.svg" className="reset-icon" alt=""/> */}
-        <div className="cardContainer">
-          {tags.map((tag, index) => (
-            <TinderCard
-              ref={childRefs[index]}
-              className="swipe"
-              key={tag}
-              onSwipe={(dir) => swiped(dir, tag)}
-              onCardLeftScreen={() => outOfFrame(tag)}
-            >
-              <div className="card">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: jdenticon.toSvg(tag, 200),
-                  }}
-                ></div>
+    <>
+      <Container>
+        <div>
+          <h1>Do you like?</h1>
+          {/* <img src="autorenew-24px.svg" className="reset-icon" alt=""/> */}
+          <div className="cardContainer">
+            {tags.map((tag, index) => (
+              <TinderCard
+                ref={childRefs[index]}
+                className="swipe"
+                key={tag}
+                onSwipe={(dir) => swiped(dir, tag)}
+                onCardLeftScreen={() => outOfFrame(tag)}
+              >
+                <div className="card">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: jdenticon.toSvg(tag, 200),
+                    }}
+                  ></div>
 
-                <h3>{tag}</h3>
-              </div>
-            </TinderCard>
-          ))}
+                  <h3>{tag}</h3>
+                </div>
+              </TinderCard>
+            ))}
+          </div>
+          {lastDirection ? (
+            <h2 className="infoText">
+              {lastDirection === "right"
+                ? `you liked '${likes[likes.length - 1]}'`
+                : `you disliked '${dislikes[dislikes.length - 1]}'`}
+            </h2>
+          ) : (
+            <h2 className="infoText" />
+          )}
         </div>
-        {lastDirection ? (
-          <h2 className="infoText">
-            {lastDirection === "right"
-              ? `you liked '${likes[likes.length - 1]}'`
-              : `you disliked '${dislikes[dislikes.length - 1]}'`}
-          </h2>
-        ) : (
-          <h2 className="infoText" />
-        )}
-      </div>
-      <div className="buttons">
-        <button onClick={() => swipe("left")}>Swipe left!</button>
-        <button onClick={() => swipe("right")}>Swipe right!</button>
-      </div>
-    </Container>
+        <div className="buttons">
+          <button onClick={() => swipe("left")}>Dislike!</button>
+          <button onClick={() => swipe("right")}>Like!</button>
+        </div>
+      </Container>
+    </>
   );
 };
 

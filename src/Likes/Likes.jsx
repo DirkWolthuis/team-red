@@ -1,17 +1,16 @@
-import React from 'react';
-import './likes.css';
-
+import React from "react";
+import "./likes.css";
 
 function Likes(props) {
-    return (
-        <>
-            {
-                props.likes.map((like) => (
-                    <div key={like} className="tile">{like}</div>
-                ))
-            }
-        </>
-    );
+  return (
+    <>
+      {props.likes.map((like) => (
+        <div key={like} className="tag">
+          {like}
+        </div>
+      ))}
+    </>
+  );
 }
 
 export default Likes;
